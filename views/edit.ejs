@@ -1,0 +1,11 @@
+<h1>Edit Mongoose</h1>
+<%= penguin %>
+<form action='/penguins/<%= penguin._id %>/update' method='post'>
+	<label>Name: </label><input type='text'  name='name' value='<%= penguin.name %>'>
+	<br>
+	<label>Color: </label><input type='text'  name='color' value='<%= penguin.color %>'>
+	<br>
+	<label>Tail: </label><input type='text'  name='tail' value='<%= penguin.tail %>'>
+	<br>
+	<input type='submit' value='Update Penguin'>
+</form>

@@ -1,0 +1,42 @@
+<html lang='en'>
+<head>
+	<title>Express Demo</title>
+	<meta charset='UTF-8'>
+	<meta name='description' content='Shain Lafazan builds apps.'>
+	<meta name="author" content="Shain Lafazan">
+</head>
+<body>
+	<h1>All Penguins!</h1>
+
+	<ul>
+		<h3>Navigation</h3>
+		<li><a href="/penguins/new">Add New Penguin</a></li>	
+	</ul>
+
+	<table>
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Color</th>
+				<th>Tail Type</th>
+				<th>Edit</th>
+				<th>Delete</th>
+			</tr>
+		</thead>
+		<tbody>
+
+		<% for(var penguin of penguins) { %>
+			<tr>
+				<td><a href="/penguins/<%= penguin._id %>"><%= penguin.name %></a></td>
+				<td><%= penguin.color %></td>
+				<td><%= penguin.tail %></td>
+				<td><a href="/penguins/<%= penguin._id %>/edit">Edit</a></td>
+				<td><a href='/penguins/<%= penguin._id %>/destroy'>Delete</a></td>
+			</tr>
+		<% } %>
+
+		</tbody>
+	</table>
+
+</body>
+</html>
